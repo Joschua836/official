@@ -336,6 +336,151 @@
       line-height:1.75;
     }
 
+
+    .automation-box{
+      margin-top:34px;
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .automation-highlight{
+      background:#111827;
+      color:#fff;
+      border-radius:24px;
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:290px;
+    }
+
+    .automation-highlight .small{
+      color:#cbd5e1;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .automation-highlight h3{
+      margin:14px 0 12px;
+      font-size:31px;
+      line-height:1.08;
+      letter-spacing:-1.2px;
+    }
+
+    .automation-highlight p{
+      margin:0;
+      color:#d6dde8;
+      line-height:1.7;
+    }
+
+    .automation-steps{
+      display:grid;
+      gap:12px;
+    }
+
+    .automation-step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 20px;
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:13px;
+      align-items:start;
+    }
+
+    .automation-step-num{
+      width:34px;
+      height:34px;
+      border-radius:10px;
+      background:var(--soft);
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:13px;
+    }
+
+    .automation-step h4{
+      margin:0 0 5px;
+      font-size:16px;
+    }
+
+    .automation-step p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .admin-explainer{
+      margin-top:26px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:#fff;
+      padding:26px;
+    }
+
+    .admin-explainer h3{
+      margin:0 0 8px;
+      font-size:24px;
+      letter-spacing:-.7px;
+    }
+
+    .admin-explainer > p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .admin-flow{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+    }
+
+    .admin-flow-step{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      background:#fafafa;
+    }
+
+    .admin-flow-step strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:14px;
+    }
+
+    .admin-flow-step span{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    .admin-example{
+      margin-top:18px;
+      padding:15px 17px;
+      border-radius:14px;
+      background:#f6f7fb;
+      color:#4b5563;
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    @media(max-width:850px){
+      .automation-box{grid-template-columns:1fr}
+      .admin-flow{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:560px){
+      .admin-flow{grid-template-columns:1fr}
+    }
+
     .cards{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -796,6 +941,52 @@
             <p>Die Anwendung soll ohne lange Einarbeitung funktionieren – auf Smartphone, Tablet und Computer.</p>
           </div>
         </div>
+
+        <div class="automation-box">
+          <div class="automation-highlight">
+            <div>
+              <div class="small">Komplett automatisiert</div>
+              <h3>Vom Papierplan direkt zum digitalen Dienstplan.</h3>
+              <p>
+                Der Betrieb muss seinen Ablauf überhaupt nicht umstellen. Der fertige Papierplan wird einfach
+                als Foto oder Scan an Arvyno geschickt – mehr ist nicht nötig. Wir übernehmen die digitale
+                Umsetzung und Bereitstellung. Wird der Plan an einem Tag geschickt, ist die digitale Version
+                spätestens am nächsten Tag online und für die Mitarbeiter nutzbar.
+              </p>
+            </div>
+          </div>
+
+          <div class="automation-steps">
+            <div class="automation-step">
+              <div class="automation-step-num">1</div>
+              <div>
+                <h4>Papierplan an Arvyno schicken</h4>
+                <p>Das ist alles, was der Betrieb tun muss: Ein Foto oder Scan des fertigen Dienstplans genügt.</p>
+              </div>
+            </div>
+            <div class="automation-step">
+              <div class="automation-step-num">2</div>
+              <div>
+                <h4>Arvyno übernimmt den Rest</h4>
+                <p>Wir übertragen Namen, Tage und Schichten in das digitale System und bereiten den neuen Monatsplan vollständig vor.</p>
+              </div>
+            </div>
+            <div class="automation-step">
+              <div class="automation-step-num">3</div>
+              <div>
+                <h4>Spätestens am nächsten Tag online</h4>
+                <p>Der fertige Plan wird bereitgestellt und kann anschließend direkt von den Mitarbeitern auf Handy, Tablet oder Computer genutzt werden.</p>
+              </div>
+            </div>
+            <div class="automation-step">
+              <div class="automation-step-num">4</div>
+              <div>
+                <h4>Jeden Monat genauso einfach</h4>
+                <p>Neuer Monat, neuer Papierplan: einfach wieder an Arvyno schicken. Die digitale Aktualisierung übernehmen wir.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -881,6 +1072,38 @@
             </div>
           </div>
         </div>
+
+        <div class="admin-explainer">
+          <h3>Was der Admin-Bereich übernimmt</h3>
+          <p>
+            Mitarbeiter können Änderungen oder Tauschwünsche vorschlagen, ohne dass der Dienstplan sofort
+            verändert wird. Der Betrieb behält die Kontrolle und entscheidet selbst, was übernommen wird.
+          </p>
+
+          <div class="admin-flow">
+            <div class="admin-flow-step">
+              <strong>1. Wunsch senden</strong>
+              <span>Ein Mitarbeiter schlägt zum Beispiel einen Schichttausch mit einer anderen Person vor.</span>
+            </div>
+            <div class="admin-flow-step">
+              <strong>2. Vorschlag landet im Admin-Bereich</strong>
+              <span>Der Wunsch wird gesammelt angezeigt und ist klar vom eigentlichen Dienstplan getrennt.</span>
+            </div>
+            <div class="admin-flow-step">
+              <strong>3. Prüfen und entscheiden</strong>
+              <span>Der Verantwortliche kann den Vorschlag annehmen, ablehnen oder zunächst unverändert lassen.</span>
+            </div>
+            <div class="admin-flow-step">
+              <strong>4. Plan aktualisieren</strong>
+              <span>Erst nach Freigabe wird die gewünschte Änderung in den digitalen Dienstplan übernommen.</span>
+            </div>
+          </div>
+
+          <div class="admin-example">
+            Beispiel: „Anna möchte ihre Schicht am 15.08. mit Ben am 16.08. tauschen.“
+            Dieser Wunsch erscheint im Admin-Bereich. Erst wenn er bestätigt wird, wird der Plan entsprechend geändert.
+          </div>
+        </div>
       </div>
     </section>
 
@@ -891,7 +1114,7 @@
             <h2>Ein Ablauf nervt jeden Tag?</h2>
             <p>Genau solche Abläufe wollen wir mit Arvyno einfacher machen. Von der ersten Idee bis zur fertigen digitalen Lösung.</p>
           </div>
-          <a class="btn" href="mailto:kontakt@arvyno.de">Kontakt aufnehmen</a>
+          <a class="btn" href="mailto:arvyno.official@gmail.com">Kontakt aufnehmen</a>
         </div>
       </div>
     </section>
