@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arvyno digitalisiert einfache Abläufe für Unternehmen – individuell, übersichtlich und ohne unnötige Komplexität.">
+  <title>Arvyno – Digitale Lösungen für deinen Betrieb</title>
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --accent:#111827;
+      --soft:#eef1f5;
+      --green:#0f766e;
+      --green-soft:#ecfdf5;
+      --orange:#c96f10;
+      --shadow:0 20px 60px rgba(17,24,39,.08);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+    }
+
+    a{color:inherit;text-decoration:none}
+    button,select{font:inherit}
+
+    .wrap{
+      width:min(1120px, calc(100% - 36px));
+      margin:0 auto;
+    }
+
+    nav{
+      height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand{
+      font-size:25px;
+      font-weight:900;
+      letter-spacing:-1px;
+    }
+
+    .navlinks{
+      display:flex;
+      gap:26px;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .navlinks a:hover{color:var(--text)}
+
+    .nav-btn{
+      padding:11px 17px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      font-weight:800;
+    }
+
+    .hero{
+      min-height:620px;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      align-items:center;
+      gap:64px;
+      padding:70px 0 90px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:7px 11px;
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      color:var(--muted);
+      margin-bottom:22px;
+    }
+
+    .dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--green);
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(46px,6vw,78px);
+      line-height:.98;
+      letter-spacing:-4px;
+      max-width:780px;
+    }
+
+    .hero p{
+      margin:28px 0 32px;
+      font-size:19px;
+      line-height:1.7;
+      color:var(--muted);
+      max-width:650px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border:0;
+      border-radius:13px;
+      padding:14px 19px;
+      font-weight:850;
+      cursor:pointer;
+    }
+
+    .btn.primary{background:var(--accent);color:white}
+    .btn.secondary{background:white;border:1px solid var(--line)}
+
+    .hero-card{
+      background:linear-gradient(145deg,#111827,#252d3b);
+      color:#fff;
+      min-height:410px;
+      border-radius:30px;
+      padding:34px;
+      box-shadow:0 30px 80px rgba(17,24,39,.22);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero-card:after{
+      content:"A";
+      position:absolute;
+      right:-20px;
+      bottom:-90px;
+      font-size:290px;
+      line-height:1;
+      font-weight:950;
+      opacity:.05;
+    }
+
+    .hero-card small{
+      color:#cbd5e1;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .hero-card h2{
+      font-size:36px;
+      line-height:1.1;
+      margin:14px 0;
+      max-width:420px;
+      letter-spacing:-1.5px;
+    }
+
+    .mini-list{
+      display:grid;
+      gap:11px;
+      position:relative;
+      z-index:1;
+    }
+
+    .mini-row{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;
+      padding:13px 14px;
+    }
+
+    .check{
+      width:22px;height:22px;border-radius:7px;
+      background:#fff;color:#111827;
+      display:grid;place-items:center;
+      font-size:13px;font-weight:900;
+    }
+
+
+
+    .acronym-section{
+      padding:20px 0 120px;
+    }
+
+    .acronym-scroll{
+      min-height:1250px;
+      position:relative;
+    }
+
+    .acronym-sticky{
+      position:sticky;
+      top:90px;
+      min-height:610px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+
+    .acronym-inner{
+      width:100%;
+      position:relative;
+      min-height:520px;
+    }
+
+    .arvyno-word{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:.05em;
+      font-size:clamp(60px,11vw,145px);
+      line-height:1;
+      font-weight:950;
+      letter-spacing:-.08em;
+      transition:opacity .35s ease;
+      pointer-events:none;
+    }
+
+    .arvyno-letter{
+      display:inline-block;
+      will-change:transform, opacity;
+      transform:translate3d(0,0,0);
+    }
+
+    .expanded-list{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:10px;
+      padding:24px 8%;
+      pointer-events:none;
+    }
+
+    .expanded-row{
+      display:flex;
+      align-items:baseline;
+      gap:0;
+      font-size:clamp(34px,5vw,64px);
+      line-height:1.05;
+      letter-spacing:-.045em;
+      font-weight:850;
+      opacity:0;
+      transform:translateY(18px);
+      will-change:transform, opacity;
+    }
+
+    .expanded-initial{
+      display:inline-block;
+      min-width:1.05em;
+      font-weight:950;
+    }
+
+    .expanded-rest{
+      display:inline-block;
+      overflow:hidden;
+      white-space:nowrap;
+      max-width:0;
+      opacity:0;
+    }
+
+    .acronym-caption{
+      position:absolute;
+      left:8%;
+      bottom:14px;
+      color:var(--muted);
+      font-size:14px;
+      opacity:0;
+      transform:translateY(10px);
+    }
+
+    @media(max-width:700px){
+      .acronym-scroll{min-height:1050px}
+      .acronym-sticky{top:72px;min-height:540px}
+      .expanded-list{padding:20px 5%}
+      .expanded-row{font-size:clamp(31px,9vw,48px)}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .arvyno-word,
+      .arvyno-letter,
+      .expanded-row,
+      .expanded-rest,
+      .acronym-caption{
+        transition:none!important;
+      }
+    }
+
+    section{
+      padding:92px 0;
+    }
+
+    .section-label{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
+    .section-title{
+      font-size:clamp(34px,4.3vw,54px);
+      line-height:1.05;
+      letter-spacing:-2.5px;
+      margin:0 0 18px;
+    }
+
+    .section-copy{
+      color:var(--muted);
+      max-width:720px;
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:42px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:27px;
+      box-shadow:0 10px 30px rgba(17,24,39,.035);
+    }
+
+    .card-num{
+      width:38px;height:38px;border-radius:12px;
+      background:var(--soft);
+      display:grid;place-items:center;
+      font-weight:900;
+      margin-bottom:38px;
+    }
+
+    .card h3{margin:0 0 9px;font-size:20px}
+    .card p{margin:0;color:var(--muted);line-height:1.7}
+
+    .demo-shell{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      margin-top:44px;
+    }
+
+    .browserbar{
+      height:52px;
+      padding:0 18px;
+      display:flex;
+      align-items:center;
+      gap:7px;
+      border-bottom:1px solid var(--line);
+      background:#fafafa;
+    }
+
+    .browser-dot{
+      width:10px;height:10px;border-radius:50%;background:#d1d5db;
+    }
+
+    .browser-url{
+      margin-left:9px;
+      background:white;
+      border:1px solid var(--line);
+      color:#9ca3af;
+      border-radius:8px;
+      padding:7px 12px;
+      font-size:12px;
+      width:min(380px,70%);
+    }
+
+    .demo{
+      background:#fbf7f1;
+      padding:28px;
+    }
+
+    .demo-header{
+      border-radius:21px;
+      padding:24px;
+      background:#173a2c;
+      color:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:20px;
+    }
+
+    .demo-kicker{
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.14em;
+      color:#d9e8df;
+    }
+
+    .demo-header h3{
+      margin:5px 0 5px;
+      font-size:30px;
+      font-family:Georgia,"Times New Roman",serif;
+    }
+
+    .demo-sub{color:#d9e8df;font-size:13px}
+    .month{
+      background:#fff;
+      color:#173a2c;
+      border-radius:999px;
+      padding:9px 12px;
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .demo-controls{
+      margin-top:14px;
+      border:1px solid #eadfce;
+      background:#fff;
+      border-radius:16px;
+      padding:16px;
+      display:flex;
+      gap:12px;
+      align-items:end;
+      justify-content:space-between;
+    }
+
+    .control-group{flex:1}
+    .control-group label{
+      display:block;
+      font-size:11px;
+      color:#74695e;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    .control-group select{
+      width:100%;
+      padding:11px;
+      border-radius:10px;
+      border:1px solid #dfd4c5;
+      background:#fff;
+      font-weight:750;
+      color:#332b25;
+    }
+
+    .admin-btn{
+      border:1px solid #dfd4c5;
+      background:#fffaf3;
+      border-radius:10px;
+      padding:11px 14px;
+      font-weight:850;
+      cursor:pointer;
+    }
+
+    .today-panel{
+      margin-top:14px;
+      border:1px solid #eadfce;
+      background:#fff;
+      border-radius:16px;
+      padding:18px;
+    }
+
+    .today-panel h4{
+      font-family:Georgia,"Times New Roman",serif;
+      margin:0;
+      font-size:22px;
+    }
+
+    .today-date{
+      font-size:12px;
+      color:#83766a;
+      margin:3px 0 13px;
+    }
+
+    .worker-list{display:grid;gap:8px}
+
+    .worker{
+      display:flex;
+      justify-content:space-between;
+      border:1px solid #eadfce;
+      background:#fffaf3;
+      padding:11px 13px;
+      border-radius:11px;
+      gap:16px;
+    }
+
+    .worker strong{font-size:13px}
+    .worker span{font-size:13px;font-weight:900;color:var(--orange)}
+
+    .calendar-demo{
+      display:none;
+      margin-top:14px;
+      border:1px solid #eadfce;
+      background:#fff;
+      border-radius:16px;
+      padding:18px;
+    }
+
+    .calendar-demo.active{display:block}
+    .today-panel.hidden{display:none}
+
+    .cal-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:14px;
+    }
+
+    .cal-title h4{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:21px}
+    .badge{font-size:11px;background:#edf7f0;color:#245c43;padding:6px 9px;border-radius:999px;font-weight:900}
+
+    .weekgrid{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:7px;
+    }
+
+    .weekday{
+      text-align:center;
+      font-size:10px;
+      font-weight:900;
+      color:#8c8177;
+    }
+
+    .day{
+      min-height:72px;
+      border:1px solid #eee3d4;
+      border-radius:10px;
+      padding:8px;
+      background:#fffaf3;
+    }
+
+    .date{font-size:10px;color:#8f8379}
+    .time{font-size:12px;font-weight:900;margin-top:13px;color:#173a2c}
+    .off{font-size:11px;color:#aaa097;margin-top:13px}
+
+
+    .staff-table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      min-width:760px;
+      font-size:12px;
+    }
+
+    .staff-table th,
+    .staff-table td{
+      padding:10px 12px;
+      border-right:1px solid #eadfce;
+      border-bottom:1px solid #eadfce;
+      text-align:center;
+      white-space:nowrap;
+    }
+
+    .staff-table th{
+      background:#f6efe6;
+      color:#6f6257;
+      font-size:11px;
+      font-weight:900;
+    }
+
+    .staff-table th:first-child,
+    .staff-table td:first-child{
+      text-align:left;
+      font-weight:900;
+      position:sticky;
+      left:0;
+      background:#fff;
+      z-index:1;
+    }
+
+    .staff-table tr:first-child th{
+      border-top:1px solid #eadfce;
+    }
+
+    .staff-table th:first-child,
+    .staff-table td:first-child{
+      border-left:1px solid #eadfce;
+    }
+
+    .staff-table td.work{
+      color:#173a2c;
+      font-weight:900;
+      background:#f7fbf8;
+    }
+
+    .staff-table td.free{
+      color:#aaa097;
+    }
+
+    .notice{
+      margin-top:16px;
+      padding:12px 14px;
+      border-radius:12px;
+      background:var(--green-soft);
+      color:#17604e;
+      font-size:12px;
+      font-weight:750;
+    }
+
+    .cta{
+      padding-bottom:110px;
+    }
+
+    .cta-box{
+      background:#111827;
+      color:#fff;
+      border-radius:28px;
+      padding:50px;
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      align-items:center;
+    }
+
+    .cta-box h2{
+      margin:0 0 9px;
+      font-size:36px;
+      letter-spacing:-1.5px;
+    }
+
+    .cta-box p{
+      margin:0;color:#cbd5e1;max-width:620px;
+    }
+
+    .cta-box .btn{background:#fff;color:#111827;white-space:nowrap}
+
+    footer{
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      padding:24px 0 38px;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    @media(max-width:850px){
+      .hero{grid-template-columns:1fr;padding-top:40px}
+      .hero-card{min-height:350px}
+      .cards{grid-template-columns:1fr}
+      .navlinks{display:none}
+      .cta-box{flex-direction:column;align-items:flex-start}
+    }
+
+    @media(max-width:600px){
+      .wrap{width:min(100% - 24px,1120px)}
+      nav{height:66px}
+      h1{letter-spacing:-2.5px}
+      .hero{gap:35px;padding-bottom:65px}
+      section{padding:68px 0}
+      .demo{padding:12px}
+      .demo-header{padding:18px}
+      .demo-header h3{font-size:24px}
+      .month{display:none}
+      .demo-controls{flex-direction:column;align-items:stretch}
+      .weekgrid{gap:4px}
+      .day{min-height:63px;padding:6px}
+      .time{font-size:10px}
+      .cta-box{padding:28px}
+      .footer-inner{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="wrap">
+    <nav>
+      <a class="brand" href="#">Arvyno</a>
+      <div class="navlinks">
+        <a href="#leistungen">Was wir machen</a>
+        <a href="#demo">Demo</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <a class="nav-btn" href="#demo">Demo ansehen</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Digitale Lösungen für kleine Unternehmen</div>
+        <h1>Einfachere Abläufe. Weniger Papier.</h1>
+        <p>
+          Arvyno entwickelt schlanke digitale Lösungen für Unternehmen, die ihre täglichen Abläufe
+          einfacher, übersichtlicher und moderner machen wollen – individuell an den Betrieb angepasst.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#demo">Beispiel ansehen</a>
+          <a class="btn secondary" href="#leistungen">Mehr über Arvyno</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div>
+          <small>Arvyno</small>
+          <h2>Digitalisierung, die im Alltag wirklich funktioniert.</h2>
+        </div>
+        <div class="mini-list">
+          <div class="mini-row"><div class="check">✓</div><div>Individuell für den Betrieb</div></div>
+          <div class="mini-row"><div class="check">✓</div><div>Einfach für Mitarbeiter zu bedienen</div></div>
+          <div class="mini-row"><div class="check">✓</div><div>Auf Handy und Computer nutzbar</div></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <section class="acronym-section" id="arvyno">
+      <div class="wrap acronym-scroll">
+        <div class="acronym-sticky">
+          <div class="acronym-inner">
+            <div class="arvyno-word" aria-label="ARVYNO">
+              <span class="arvyno-letter" data-letter="0">A</span>
+              <span class="arvyno-letter" data-letter="1">R</span>
+              <span class="arvyno-letter" data-letter="2">V</span>
+              <span class="arvyno-letter" data-letter="3">Y</span>
+              <span class="arvyno-letter" data-letter="4">N</span>
+              <span class="arvyno-letter" data-letter="5">O</span>
+            </div>
+
+            <div class="expanded-list" aria-hidden="true">
+              <div class="expanded-row" data-row="0"><span class="expanded-initial">A</span><span class="expanded-rest">utomate</span></div>
+              <div class="expanded-row" data-row="1"><span class="expanded-initial">R</span><span class="expanded-rest">efine</span></div>
+              <div class="expanded-row" data-row="2"><span class="expanded-initial">V</span><span class="expanded-rest">isualize</span></div>
+              <div class="expanded-row" data-row="3"><span class="expanded-initial">Y</span><span class="expanded-rest">our</span></div>
+              <div class="expanded-row" data-row="4"><span class="expanded-initial">N</span><span class="expanded-rest">ext</span></div>
+              <div class="expanded-row" data-row="5"><span class="expanded-initial">O</span><span class="expanded-rest">peration</span></div>
+            </div>
+
+            <div class="acronym-caption">Automate. Refine. Visualize Your Next Operation.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <div class="wrap">
+        <div class="section-label">Was wir machen</div>
+        <h2 class="section-title">Von einem nervigen Ablauf zu einer einfachen digitalen Lösung.</h2>
+        <p class="section-copy">
+          Viele kleinere Betriebe arbeiten noch mit ausgedruckten Plänen, Fotos, WhatsApp-Nachrichten
+          oder komplizierten Tabellen. Arvyno setzt genau dort an und entwickelt übersichtliche Lösungen,
+          die sich an den tatsächlichen Arbeitsalltag anpassen.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-num">01</div>
+            <h3>Ablauf verstehen</h3>
+            <p>Wir schauen uns an, wie ein Prozess aktuell funktioniert und wo unnötiger Aufwand entsteht.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">02</div>
+            <h3>Individuell digitalisieren</h3>
+            <p>Statt einer überladenen Standardsoftware entsteht eine Lösung, die genau zum Betrieb passt.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">03</div>
+            <h3>Einfach einsetzen</h3>
+            <p>Die Anwendung soll ohne lange Einarbeitung funktionieren – auf Smartphone, Tablet und Computer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo">
+      <div class="wrap">
+        <div class="section-label">Beispielprojekt</div>
+        <h2 class="section-title">So kann eine Arvyno-Lösung aussehen.</h2>
+        <p class="section-copy">
+          Beispiel: Ein klassischer Dienstplan wird als digitale, mobil nutzbare Ansicht umgesetzt.
+          Mitarbeiter sehen schnell, wann sie arbeiten, wer heute eingeteilt ist und können relevante
+          Informationen zentral abrufen.
+        </p>
+
+        <div class="demo-shell">
+          <div class="browserbar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <div class="browser-url">demo.arvyno.de/dienstplan</div>
+          </div>
+
+          <div class="demo">
+            <div class="demo-header">
+              <div>
+                <div class="demo-kicker">BEISPIELBETRIEB</div>
+                <h3>Dienstplan</h3>
+                <div class="demo-sub">Dienstplan für August 2026 – wähle einen Namen und sieh deine Startzeiten.</div>
+              </div>
+              <div class="month">August 2026</div>
+            </div>
+
+
+            <div class="demo-controls">
+              <div class="control-group">
+                <label for="employeeDemo">MITARBEITER</label>
+                <select id="employeeDemo">
+                  <option value="today">Wer arbeitet heute?</option>
+                  <option value="all">Alle Mitarbeiter</option>
+                  <option value="anna">Anna</option>
+                  <option value="ben">Ben</option>
+                  <option value="mia">Mia</option>
+                  <option value="leo">Leo</option>
+                  <option value="sophie">Sophie</option>
+                  <option value="david">David</option>
+                  <option value="lea">Lea</option>
+                  <option value="jonas">Jonas</option>
+                </select>
+              </div>
+              <button class="admin-btn" type="button" onclick="demoAdmin()">Admin</button>
+            </div>
+
+            <div id="todayPanel" class="today-panel">
+              <h4>Wer arbeitet heute?</h4>
+              <div class="today-date">Montag, 10. August 2026</div>
+              <div class="worker-list" id="todayList"></div>
+            </div>
+
+            <div id="allPanel" class="calendar-demo">
+              <div class="cal-title">
+                <h4>Alle Mitarbeiter</h4>
+                <span class="badge">August 2026</span>
+              </div>
+              <div style="overflow-x:auto;">
+                <table class="staff-table">
+                  <thead>
+                    <tr>
+                      <th>Mitarbeiter</th>
+                      <th>05.08.</th>
+                      <th>06.08.</th>
+                      <th>07.08.</th>
+                      <th>08.08.</th>
+                      <th>09.08.</th>
+                      <th>10.08.</th>
+                      <th>11.08.</th>
+                    </tr>
+                  </thead>
+                  <tbody id="staffTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="calendarPanel" class="calendar-demo">
+              <div class="cal-title">
+                <h4 id="demoName">Anna</h4>
+                <span class="badge" id="workdayBadge">0 Arbeitstage</span>
+              </div>
+              <div class="weekgrid" id="personCalendar"></div>
+            </div>
+
+            <div class="notice" id="demoNotice">
+              Diese Vorschau ist nur eine Demo. Reale Lösungen werden individuell an den jeweiligen Betrieb angepasst.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="kontakt">
+      <div class="wrap">
+        <div class="cta-box">
+          <div>
+            <h2>Ein Ablauf nervt jeden Tag?</h2>
+            <p>Genau solche Abläufe wollen wir mit Arvyno einfacher machen. Von der ersten Idee bis zur fertigen digitalen Lösung.</p>
+          </div>
+          <a class="btn" href="mailto:kontakt@arvyno.de">Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <strong>Arvyno</strong>
+      <span>© 2026 Arvyno. Alle Rechte vorbehalten.</span>
+    </div>
+  </footer>
+
+  <script>
+    const demoPlan = {
+      anna:   {name:"Anna",   shifts:{"05.08.":"17:00","07.08.":"17:00","09.08.":"16:30","10.08.":"17:00","11.08.":"18:00"}},
+      ben:    {name:"Ben",    shifts:{"06.08.":"18:00","08.08.":"17:30","10.08.":"18:00"}},
+      mia:    {name:"Mia",    shifts:{"05.08.":"16:00","06.08.":"17:00","09.08.":"18:00","10.08.":"18:00","11.08.":"17:00"}},
+      leo:    {name:"Leo",    shifts:{"07.08.":"18:00","08.08.":"18:00","09.08.":"17:00"}},
+      sophie: {name:"Sophie", shifts:{"05.08.":"17:30","08.08.":"16:30","11.08.":"18:00"}},
+      david:  {name:"David",  shifts:{"06.08.":"16:00","07.08.":"17:30","10.08.":"16:30"}},
+      lea:    {name:"Lea",    shifts:{"05.08.":"18:00","09.08.":"17:30","10.08.":"17:30","11.08.":"16:00"}},
+      jonas:  {name:"Jonas",  shifts:{"06.08.":"17:00","08.08.":"18:30","10.08.":"18:30"}}
+    };
+
+    const demoDates = ["05.08.","06.08.","07.08.","08.08.","09.08.","10.08.","11.08."];
+    const weekdayLabels = ["Mi","Do","Fr","Sa","So","Mo","Di"];
+
+    const employeeDemo = document.getElementById("employeeDemo");
+    const todayPanel = document.getElementById("todayPanel");
+    const allPanel = document.getElementById("allPanel");
+    const calendarPanel = document.getElementById("calendarPanel");
+    const demoName = document.getElementById("demoName");
+    const workdayBadge = document.getElementById("workdayBadge");
+    const personCalendar = document.getElementById("personCalendar");
+    const todayList = document.getElementById("todayList");
+    const staffTableBody = document.getElementById("staffTableBody");
+    const demoNotice = document.getElementById("demoNotice");
+
+    function renderToday(){
+      const todayKey = "10.08.";
+      const workers = Object.values(demoPlan).filter(p => p.shifts[todayKey]);
+
+      todayList.innerHTML = workers.map(p => `
+        <div class="worker">
+          <strong>${p.name}</strong>
+          <span>${p.shifts[todayKey]} Uhr</span>
+        </div>
+      `).join("");
+    }
+
+    function renderAll(){
+      staffTableBody.innerHTML = Object.values(demoPlan).map(p => {
+        const cells = demoDates.map(date => {
+          const time = p.shifts[date];
+          return time
+            ? `<td class="work">${time}</td>`
+            : `<td class="free">Frei</td>`;
+        }).join("");
+
+        return `<tr><td>${p.name}</td>${cells}</tr>`;
+      }).join("");
+    }
+
+    function renderPerson(key){
+      const person = demoPlan[key];
+      const workdays = Object.keys(person.shifts).length;
+
+      demoName.textContent = person.name;
+      workdayBadge.textContent = `${workdays} Arbeitstage`;
+
+      personCalendar.innerHTML =
+        weekdayLabels.map(w => `<div class="weekday">${w}</div>`).join("") +
+        demoDates.map(date => {
+          const time = person.shifts[date];
+          return `
+            <div class="day">
+              <div class="date">${date}</div>
+              ${time
+                ? `<div class="time">${time} Uhr</div>`
+                : `<div class="off">Frei</div>`}
+            </div>
+          `;
+        }).join("");
+    }
+
+    function showView(value){
+      todayPanel.classList.add("hidden");
+      allPanel.classList.remove("active");
+      calendarPanel.classList.remove("active");
+
+      if(value === "today"){
+        todayPanel.classList.remove("hidden");
+      } else if(value === "all"){
+        allPanel.classList.add("active");
+      } else {
+        renderPerson(value);
+        calendarPanel.classList.add("active");
+      }
+    }
+
+    employeeDemo.addEventListener("change", function(){
+      showView(this.value);
+    });
+
+    function demoAdmin(){
+      demoNotice.textContent = "Demo: Im Admin-Bereich könnten zum Beispiel Dienstplanänderungen, Tauschanfragen und Schichtanpassungen geprüft werden.";
+      demoNotice.scrollIntoView({behavior:"smooth", block:"nearest"});
+    }
+
+    renderToday();
+    renderAll();
+    showView("today");
+
+
+    const acronymSection = document.getElementById("arvyno");
+    const sourceWord = document.querySelector(".arvyno-word");
+    const sourceLetters = [...document.querySelectorAll(".arvyno-letter")];
+    const expandedRows = [...document.querySelectorAll(".expanded-row")];
+    const expandedRests = [...document.querySelectorAll(".expanded-rest")];
+    const acronymCaption = document.querySelector(".acronym-caption");
+
+    function clamp01(v){ return Math.max(0, Math.min(1, v)); }
+    function ease(v){ return v * v * (3 - 2 * v); }
+
+    function updateAcronymAnimation(){
+      if(!acronymSection || !sourceWord) return;
+
+      const rect = acronymSection.getBoundingClientRect();
+      const scrollLength = Math.max(1, rect.height - window.innerHeight);
+      const progress = clamp01((-rect.top + window.innerHeight * 0.10) / scrollLength);
+
+      // Phase 1: ARVYNO stays horizontal.
+      // Phase 2: letters visually leave the word.
+      // Phase 3: each row expands from its initial into the full word.
+      const split = ease(clamp01((progress - 0.08) / 0.34));
+      const expandBase = clamp01((progress - 0.34) / 0.58);
+
+      sourceWord.style.opacity = String(1 - split * 0.92);
+
+      sourceLetters.forEach((letter, i) => {
+        const direction = i - 2.5;
+        const x = direction * split * 12;
+        const y = direction * split * 10;
+        letter.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        letter.style.opacity = String(1 - split);
+      });
+
+      expandedRows.forEach((row, i) => {
+        const local = ease(clamp01((expandBase * 6 - i) / 1.15));
+        row.style.opacity = String(local);
+        row.style.transform = `translateY(${(1-local)*18}px)`;
+
+        const rest = expandedRests[i];
+        rest.style.maxWidth = `${local * 11}em`;
+        rest.style.opacity = String(local);
+      });
+
+      const captionP = ease(clamp01((progress - 0.86) / 0.12));
+      acronymCaption.style.opacity = String(captionP);
+      acronymCaption.style.transform = `translateY(${(1-captionP)*10}px)`;
+    }
+
+    window.addEventListener("scroll", updateAcronymAnimation, {passive:true});
+    window.addEventListener("resize", updateAcronymAnimation);
+    updateAcronymAnimation();
+
+  </script>
+</body>
+</html>
