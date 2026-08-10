@@ -840,7 +840,143 @@
       .cta-box{padding:28px}
       .footer-inner{flex-direction:column}
     }
-  </style>
+  .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}.price-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px}.price-card.featured{border:2px solid #111827;box-shadow:var(--shadow)}.price-tag{display:inline-block;padding:7px 10px;border-radius:999px;background:#111827;color:#fff;font-size:11px;font-weight:900;text-transform:uppercase;margin-bottom:18px}.price{font-size:42px;font-weight:950;letter-spacing:-2px;margin:15px 0 3px}.price small{font-size:14px;color:var(--muted)}.setup-price{color:var(--muted);font-size:14px;margin-bottom:22px}.price-list{display:grid;gap:10px;margin-top:22px}.price-item{display:grid;grid-template-columns:22px 1fr;gap:9px;font-size:14px;line-height:1.55}.changes-box{margin-top:20px;padding:24px;border-radius:20px;background:#111827;color:#fff}.changes-box p{color:#d5dbe5;line-height:1.7}.changes-price{display:inline-block;margin-top:10px;background:#fff;color:#111827;padding:9px 12px;border-radius:10px;font-weight:900;font-size:13px}@media(max-width:760px){.pricing-grid{grid-template-columns:1fr}}
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:22px;
+      margin-top:34px;
+      align-items:start;
+    }
+
+    .contact-info{
+      background:#111827;
+      color:#fff;
+      border-radius:24px;
+      padding:30px;
+    }
+
+    .contact-info h3{
+      margin:0 0 10px;
+      font-size:27px;
+      letter-spacing:-1px;
+    }
+
+    .contact-info p{
+      margin:0 0 22px;
+      color:#d4dae4;
+      line-height:1.7;
+    }
+
+    .contact-mail-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px 17px;
+      border-radius:12px;
+      background:#fff;
+      color:#111827;
+      font-weight:850;
+      text-decoration:none;
+    }
+
+    .contact-address{
+      margin-top:14px;
+      font-size:13px;
+      color:#cbd5e1;
+      overflow-wrap:anywhere;
+    }
+
+    .contact-form{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:28px;
+    }
+
+    .contact-form h3{
+      margin:0 0 6px;
+      font-size:25px;
+      letter-spacing:-.8px;
+    }
+
+    .contact-form-intro{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .form-field{
+      display:grid;
+      gap:6px;
+    }
+
+    .form-field.full{
+      grid-column:1 / -1;
+    }
+
+    .form-field label{
+      font-size:12px;
+      font-weight:850;
+      color:#4b5563;
+    }
+
+    .form-field input,
+    .form-field textarea{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px 13px;
+      background:#fff;
+      color:var(--text);
+      font:inherit;
+      outline:none;
+    }
+
+    .form-field textarea{
+      min-height:125px;
+      resize:vertical;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus{
+      border-color:#9ca3af;
+      box-shadow:0 0 0 3px rgba(17,24,39,.06);
+    }
+
+    .form-submit{
+      margin-top:16px;
+      border:0;
+      border-radius:12px;
+      padding:13px 17px;
+      background:#111827;
+      color:#fff;
+      font-weight:850;
+      cursor:pointer;
+    }
+
+    .form-note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.5;
+    }
+
+    @media(max-width:760px){
+      .contact-grid{grid-template-columns:1fr}
+      .form-grid{grid-template-columns:1fr}
+      .form-field.full{grid-column:auto}
+    }
+
+</style>
 </head>
 <body>
 
@@ -850,7 +986,7 @@
       <div class="navlinks">
         <a href="#leistungen">Was wir machen</a>
         <a href="#demo">Demo</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="#preise">Preise</a><a href="#kontakt">Kontakt</a>
       </div>
       <a class="nav-btn" href="#demo">Demo ansehen</a>
     </nav>
@@ -1107,14 +1243,71 @@
       </div>
     </section>
 
-    <section class="cta" id="kontakt">
+    <section id="preise"><div class="wrap"><div class="section-label">Preise</div><h2 class="section-title">Einmal einrichten. Danach übernimmt Arvyno.</h2><p class="section-copy">Der Betrieb schickt lediglich den neuen Dienstplan. Arvyno übernimmt die laufende digitale Aktualisierung.</p><div class="pricing-grid"><div class="price-card featured"><div class="price-tag">Early Partner · erste 5 Betriebe</div><h3>Arvyno Early Partner</h3><div class="price">29 € <small>/ Monat</small></div><div class="setup-price">+ einmalig 99 € Einrichtung</div><div class="price-list"><div class="price-item">✓ <span>Individuelle Einrichtung + eigene Arvyno-Subdomain</span></div><div class="price-item">✓ <span>Mitarbeiter-, Admin- und Schichttausch-Funktionen</span></div><div class="price-item">✓ <span>3 kleinere Anpassungswünsche nach Einrichtung inklusive</span></div><div class="price-item">✓ <span>Monatliche Aktualisierung von Mitarbeitern und Dienstplan inklusive</span></div><div class="price-item">✓ <span>Neuer Plan spätestens innerhalb von zwei Tagen digital verfügbar</span></div><div class="price-item">✓ <span>Early-Partner-Preis bleibt bestehen, solange das Paket läuft</span></div></div></div><div class="price-card"><div class="price-tag">Regulär</div><h3>Arvyno Standard</h3><div class="price">49 € <small>/ Monat</small></div><div class="setup-price">+ einmalig 199 € Einrichtung</div><div class="price-list"><div class="price-item">✓ <span>Individuelle Einrichtung + eigene Arvyno-Subdomain</span></div><div class="price-item">✓ <span>Mitarbeiter-, Admin- und Schichttausch-Funktionen</span></div><div class="price-item">✓ <span>3 kleinere Anpassungswünsche nach Einrichtung inklusive</span></div><div class="price-item">✓ <span>Monatliche Aktualisierung von Mitarbeitern und Dienstplan inklusive</span></div><div class="price-item">✓ <span>Neuer Plan spätestens innerhalb von zwei Tagen digital verfügbar</span></div></div></div></div><div class="changes-box"><h3>Spätere Anpassungen</h3><p>Die ersten drei kleineren Anpassungswünsche nach der Einrichtung sind inklusive. Monatliche Dienstplan-Updates und Änderungen an Mitarbeitern zählen nicht dazu – sie sind bereits im Abo enthalten. Weitere kleinere Systemänderungen kosten 15 € pro Änderung. Größere neue Funktionen oder umfangreiche Umbauten werden vorher individuell besprochen und angeboten.</p><div class="changes-price">Weitere kleinere Anpassung: 15 €</div></div></div></section>
+<section class="cta" id="kontakt">
       <div class="wrap">
-        <div class="cta-box">
-          <div>
-            <h2>Ein Ablauf nervt jeden Tag?</h2>
-            <p>Genau solche Abläufe wollen wir mit Arvyno einfacher machen. Von der ersten Idee bis zur fertigen digitalen Lösung.</p>
+        <div class="section-label">Kontakt</div>
+        <h2 class="section-title">Interesse an Arvyno?</h2>
+        <p class="section-copy">
+          Schreiben Sie uns direkt per E-Mail oder senden Sie eine unverbindliche Anfrage über das Kontaktformular.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Direkt per E-Mail</h3>
+            <p>
+              Sie möchten lieber selbst eine E-Mail schreiben? Über den Button öffnet sich Ihr eingerichtetes Mailprogramm.
+            </p>
+            <a class="contact-mail-btn"
+               href="mailto:arvyno.official@gmail.com?subject=Anfrage%20zu%20Arvyno">
+              E-Mail schreiben
+            </a>
+            <div class="contact-address">arvyno.official@gmail.com</div>
           </div>
-          <a class="btn" href="mailto:arvyno.official@gmail.com">Kontakt aufnehmen</a>
+
+          <form class="contact-form"
+                action="https://formsubmit.co/arvyno.official@gmail.com"
+                method="POST">
+            <h3>Kontaktformular</h3>
+            <p class="contact-form-intro">
+              Kurz ausfüllen und absenden – die Anfrage landet direkt bei Arvyno.
+            </p>
+
+            <input type="hidden" name="_subject" value="Neue Anfrage über arvyno.de">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="betrieb">Restaurant / Betrieb *</label>
+                <input id="betrieb" name="Betrieb" type="text" required>
+              </div>
+
+              <div class="form-field">
+                <label for="name">Ansprechpartner *</label>
+                <input id="name" name="Ansprechpartner" type="text" required>
+              </div>
+
+              <div class="form-field">
+                <label for="email">E-Mail *</label>
+                <input id="email" name="E-Mail" type="email" required>
+              </div>
+
+              <div class="form-field">
+                <label for="telefon">Telefon</label>
+                <input id="telefon" name="Telefon" type="tel">
+              </div>
+
+              <div class="form-field full">
+                <label for="nachricht">Nachricht *</label>
+                <textarea id="nachricht" name="Nachricht" required
+                  placeholder="Zum Beispiel: Wir möchten unseren bisherigen Papier-Dienstplan digitalisieren."></textarea>
+              </div>
+            </div>
+
+            <button class="form-submit" type="submit">Anfrage senden</button>
+          </form>
         </div>
       </div>
     </section>
